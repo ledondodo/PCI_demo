@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CT Scan</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .plot-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .plot-card {
+      background: white;
+      padding: 10px;
+      width: 100%;
+      height: 450px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .plot-card h2 {
+      font-size: 1.1em;
+      margin-bottom: 0px;
+      height: 30px; /* fixe la hauteur du titre */
+      line-height: 30px;
+      flex-shrink: 0;
+    }
+
+    iframe {
+      width: 100%;
+      flex-grow: 1;      /* prend tout l’espace vertical restant */
+      border: none;
+    }
+
+    .back-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: #357ac9;
+    }
+
+    @media (max-width: 1400px) {
+      .plot-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .plot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>CT Scan</h1>
+
+  <div class="plot-grid">
+    <div class="plot-card">
+      <h2>Histogram</h2>
+      <iframe src="../assets/CT_histogram.html"></iframe>
+    </div>
+    <div class="plot-card">
+      <h2>Axial</h2>
+      <iframe src="../assets/CT_axial.html"></iframe>
+    </div>
+    <div class="plot-card">
+      <h2>Coronal</h2>
+      <iframe src="../assets/CT_coronal.html"></iframe>
+    </div>
+    <div class="plot-card">
+      <h2>Sagittal</h2>
+      <iframe src="../assets/CT_sagittal.html"></iframe>
+    </div>
+  </div>
+
+  <button class="back-button" onclick="location.href='../index.html'">← go back</button>
+</body>
+</html>
