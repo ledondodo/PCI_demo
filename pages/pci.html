@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D Reconstruction</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .frame-container {
+      background-color: white;
+      width: 540px;
+      height: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .frame-header {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .iframe-wrapper {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    iframe {
+      width: 600px;
+      height: 100%;
+      border: none;
+      pointer-events: auto;
+    }
+
+    label {
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+    select {
+      font-weight: bold;
+      font-size: 1em;
+      padding: 5px 10px;
+    }
+
+    .back-button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: #357ac9;
+    }
+  </style>
+</head>
+<body>
+  <h1>PCI 3D Reconstruction</h1>
+
+  <div class="frame-container">
+    <div class="frame-header">
+      <label for="plotSelect">View:</label>
+      <select id="plotSelect">
+        <option value="Organs_sample.html">Organs</option>
+        <option value="Spleen.html">Spleen</option>
+        <option value="PCI_3D.html">PCI</option>
+        <option value="PCI_0.html">PCI 0</option>
+        <option value="PCI_1.html">PCI 1</option>
+        <option value="PCI_2.html">PCI 2</option>
+        <option value="PCI_3.html">PCI 3</option>
+        <option value="PCI_4.html">PCI 4</option>
+        <option value="PCI_8.html">PCI 8</option>
+      </select>
+    </div>
+
+    <div class="iframe-wrapper">
+      <iframe id="plotFrame" src="../assets/Organs_sample.html"></iframe>
+    </div>
+  </div>
+
+  <button class="back-button" onclick="location.href='../index.html'">← go back</button>
+
+  <script>
+    const select = document.getElementById('plotSelect');
+    const iframe = document.getElementById('plotFrame');
+
+    select.addEventListener('change', () => {
+      iframe.src = `../assets/${select.value}`;
+    });
+  </script>
+</body>
+</html>
