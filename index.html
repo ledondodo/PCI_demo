@@ -8,11 +8,24 @@
     body {
       text-align: center;
       font-family: sans-serif;
-      background-color: #f9f9f9;
+      background: linear-gradient(-45deg, #f9f9f9, #759ebd, #17355f, #f0f0f0);
+      background-size: 400% 400%;
+      animation: gradientBackground 15s ease infinite;
       padding: 50px;
     }
 
+    @keyframes gradientBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     h1 {
+      background-color: rgba(255, 255, 255, 0.5);
+      display: inline-block;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+      color: #333;
       margin-top: -20px;
       margin-bottom: 30px;
     }
@@ -21,7 +34,7 @@
       position: relative;
       width: 900px;
       height: 400px;
-      margin: 10px auto 20px auto; /* marge top réduite à 10px */
+      margin: 10px auto 20px auto;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -52,11 +65,24 @@
       background-color: rgba(53, 122, 201, 0.95);
     }
 
+    hr {
+      margin-top: 80px;
+      margin-bottom: 30px;
+      border: none;
+      border-top: 2px solid #ccc;
+      width: 70%;
+    }
+
     .pipeline-title {
-      margin-top: 100px;
       font-size: 1.8em;
       font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.5);
+      display: block;
+      margin: 100px auto 20px auto;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
       color: #333;
+      width: max-content;
     }
 
     .pipeline-image {
@@ -64,16 +90,10 @@
       max-width: 60%;
       height: auto;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    hr {
-      margin-top: 80px;
-      margin-bottom: 30px;
-      border: none;
-      border-top: 2px solid #ccc;
-      width: 70%; /* ← ici tu contrôles la largeur horizontale */
-    }
-
   </style>
 </head>
 <body>
